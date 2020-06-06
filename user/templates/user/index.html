@@ -1,0 +1,22 @@
+
+{% load socialaccount %}
+{% providers_media_js %}
+
+
+
+<!DOCTYPE html>
+
+<head>
+    <title>Social Login</title>
+
+</head>
+
+<body>
+    {{user}}
+    <img src="{{ user.socialaccount_set.all.0.get_avatar_url }}" />
+
+    <button><a href="{% provider_login_url "google" %}">Google Login</a></button>
+    <button><a href="{% provider_login_url "facebook" method="js_sdk" %}">Facebook Login</a></button>
+</body>
+
+</html>
